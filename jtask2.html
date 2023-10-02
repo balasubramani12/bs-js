@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabetical Order</title>
+  <style>
+    body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+    }
+    .header{
+    background-color: rgb(163, 77, 250);
+    height: 50px;
+    color: rgb(241, 172, 253);
+    text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 2px solid grey;
+    }
+
+    button {
+      padding: 10px 20px;
+      width: 100px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <h1>String Sorter</h1>
+    </div>
+  <div class="container">
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="sortString()">Sort</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function sortString() {
+      const inputElement = document.getElementById('inputString');
+      const outputElement = document.getElementById('output');
+
+      const inputString = inputElement.value;
+      const sortedString = inputString.split('').sort().join('');
+
+      outputElement.innerText = `Sorted string: ${sortedString}`;
+    }
+  </script>
+</body>
+</html>

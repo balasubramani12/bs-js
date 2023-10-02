@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task 1</title>
+    <link rel="stylesheet" href="jtask1.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Number Reversal</h1>
+    </div>
+    
+    <div class="inp">
+        <label>Enter any Number: </label>
+        <input type="number" name="num" id="num">
+        <button type="submit" onclick="revNum();">Insert</button>
+        <div > 
+            <h4>Result: </h4><br>
+            <p id="result"><span id="inner-span"></span></p>
+        </div>
+    </div>
+    <script>
+        function revNum(){
+            var number = Number(document.querySelector("#num").value);
+
+            var result = 0;
+
+            while(number > 0){
+                // Getting the rightmost digit.
+                var rightmost = number % 10;
+                
+                result = result*10 + rightmost;
+                
+                // Removing the rightmost digit from the number.
+                number = Math.floor(number/10);
+            }
+            
+            console.log(result);
+
+            const res = document.querySelector("#result").innerHTML = `<p> <b>Output:</b> </p> ${result}`;
+            
+        }
+    </script>
+</body>
+</html>

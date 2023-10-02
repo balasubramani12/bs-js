@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+}
+.header{
+    background-color: rgb(100, 227, 255);
+}
+.inp{
+    margin-left: 35%;
+    margin-top: 5%;
+    border: 2px solid black;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 10px;
+    width: 30%;
+    font-size: 18px;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+label{
+    font-size: 18px;    
+}
+
+input{
+    border: 2px solid black;
+    padding: 3px 10px 3px 4px;
+    font-weight: bold;
+    color: grey;
+}
+.result{
+    font-weight: 600px;
+}
+#inner-span{
+    color: chocolate;
+}

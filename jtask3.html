@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task-3</title>
+  <style>
+    button {
+      padding: 5px 20px;
+      width: 100px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+    }
+    .header{
+    background-color: rgb(77, 250, 112);
+    height: 50px;
+    color: rgb(13, 99, 1);
+    text-align: center;
+    margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Minix Calculator</h1>
+    </div>
+
+  <form id="calculator-form">
+    <table align="center">
+      <tr>
+        <td><label for="1n">1st Number:</label></td>
+        <td><input type="number" id="1n"></td>
+      </tr>
+      <tr>
+        <td><label for="2n">2nd Number:</label></td>
+        <td><input type="number" id="2n"></td>
+      </tr>
+      <tr>
+        <td><button type="button" id="multiply">Multiply</button></td>
+        <td><button type="button" id="divide">Divide</button></td>
+      </tr>
+      <tr>
+        <td><label for="result">Result:</label></td>
+      </tr>
+      <tr>
+        <td><span id="result"></span></td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    const form = document.getElementById('calculator-form');
+    const firstNumberInput = document.getElementById('1n');
+    const secondNumberInput = document.getElementById('2n');
+    const resultSpan = document.getElementById('result');
+
+    document.getElementById('multiply').addEventListener('click', function() {
+      const firstNumber = parseFloat(firstNumberInput.value);
+      const secondNumber = parseFloat(secondNumberInput.value);
+
+      if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+        const multiplicationResult = firstNumber * secondNumber;
+        resultSpan.textContent = multiplicationResult;
+      } else {
+        resultSpan.textContent = 'Invalid input';
+      }
+    });
+
+    document.getElementById('divide').addEventListener('click', function() {
+      const firstNumber = parseFloat(firstNumberInput.value);
+      const secondNumber = parseFloat(secondNumberInput.value);
+
+      if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+        if (secondNumber !== 0) {
+          const divisionResult = firstNumber / secondNumber;
+          resultSpan.textContent = divisionResult;
+        } else {
+          resultSpan.textContent = 'Division by zero';
+        }
+      } else {
+        resultSpan.textContent = 'Invalid input';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date and Time App</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+    }
+
+    button {
+      padding: 5px 40px;
+      width: 100px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 10px;
+      background-color: #20bcc7;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="showDate()">Show Date</button><br><p id="output1"></p><br>
+    <button onclick="showTime()">Show Time</button>
+    <p id="output2"></p>
+  </div>
+
+  <script>
+    function showDate() {
+      const outputElement = document.getElementById('output1');
+      const currentDate = new Date().toLocaleDateString();
+
+      outputElement.innerText = `${currentDate}`;
+    }
+
+    function showTime() {
+      const outputElement = document.getElementById('output2');
+      const currentDateTime = new Date();
+      const currentTime = currentDateTime.toLocaleTimeString();
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      outputElement.innerText = `${currentDateTime}\nTimezone: ${timezone}`;
+    }
+  </script>
+</body>
+</html>
